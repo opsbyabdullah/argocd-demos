@@ -12,6 +12,8 @@ metadata:
 
     # Update strategy for chai-app image
     argocd-image-updater.argoproj.io/chai-app.update-strategy: semver # Uses semantic versioning for image updates
+    argocd-image-updater.argoproj.io/chai-app.force-update: "true" # Forces update even if the current live image doesn't match
+    argocd-image-updater.argoproj.io/chai-app.kustomize.image-name: shellcorex/chai-devops # Tells Kustomize which base image to replace
 
 spec:
   project: default              # Associates this Application with the 'default' ArgoCD project
